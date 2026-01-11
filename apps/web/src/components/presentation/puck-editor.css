@@ -1,0 +1,130 @@
+/* Puck editor custom styles */
+
+/* Make sure the drop zone uses full width */
+.puck-root :where([data-puck-drop-zone]) {
+  width: 100%;
+}
+
+/* Ensure non-empty drop zones display as block */
+.puck-root :where([data-puck-drop-zone][data-is-empty=false]) {
+  display: block;
+}
+
+/* Set the root container to use full width and height */
+.puck-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main content area take available height */
+.puck-root > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the drop zone container takes full height */
+.puck-root .puck-drop-zone-container {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fix dragging on the UI with proper size */
+.puck-drop-zone-empty {
+  min-height: 200px;
+  padding: 20px;
+  height: 200px;
+  width: 100%;
+}
+
+.puck-root .puck-drop-zone-container [data-rfd-droppable-id] {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+/* Ensure content inside the editor is properly sized */
+.puck-root .puck-drop-zone-container [data-rfd-draggable-id] {
+  width: 100%;
+}
+
+/* Hide unnecessary UI elements */
+.puck-root [data-puck-editor-topbar] {
+  display: none;
+}
+
+/* Add some spacing between editor elements */
+.puck-root [data-puck-component-item] {
+  margin-bottom: 16px;
+}
+
+/* Style the slide container as a presentation slide with 16:9 aspect ratio */
+.puck-root .puck-drop-zone-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart styling */
+.chart-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.chart-block > div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Table styling */
+.table-block {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 40px;
+}
+
+.table-block table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table-block th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+}
+
+.table-block td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Text block styling */
+.text-block {
+  width: 100%;
+}
+
+/* Title text styling */
+.text-block h1, .text-block h2, .text-block h3 {
+  margin-top: 0;
+  text-align: center;
+  padding: 20px 40px;
+  font-weight: 600;
+}
+
+/* Body text styling */
+.text-block p {
+  line-height: 1.6;
+  padding: 0 40px 20px 40px;
+} 

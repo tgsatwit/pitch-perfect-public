@@ -1,0 +1,40 @@
+{
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "ES2021",
+    "lib": [
+      "ES2021",
+      "ES2022.Object",
+      "DOM"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "declaration": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useDefineForClassFields": true,
+    "strictPropertyInitialization": false,
+    "allowJs": true,
+    "strict": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@opencanvas/agents": ["../../apps/agents/src/index.ts"]
+    }
+  },
+  "include": [
+    "src/"
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist"
+  ],
+  "references": [
+    { "path": "../../apps/agents" }
+  ]
+}

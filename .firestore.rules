@@ -1,0 +1,79 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow backend service OR authenticated users to read/write clients
+    // NOTE: In production, restrict backend access more specifically (e.g., service account email)
+    match /clients/{clientId} {
+      // Allow read/write if it's the backend (no auth) OR an authenticated user
+      allow read, write: if request.auth == null || request.auth != null; 
+    }
+    match /clients/{clientId}/{document=**} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+
+    // Allow backend service OR authenticated users to write to researchResults
+    match /researchResults/{resultId} { 
+      // Allow creating/writing results from backend or authenticated users
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users or backend services to read and write to competitors collection
+    match /competitors/{competitorId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users or backend services to read and write to related collections
+    match /competitors/{competitorId}/{document=**} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users to read and write to research collection
+    match /research/{researchId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read and write to research subcollections
+    match /research/{researchId}/{document=**} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users to read and write to prompts collection
+    match /prompts/{promptId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow authenticated users or backend services to read and write to researchPrompts collection
+    match /researchPrompts/{promptId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users or backend services to read and write to pitches collection
+    match /pitches/{pitchId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users or backend services to read and write to pitch outlines
+    match /pitches/{pitchId}/outlines/{outlineId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    // Allow authenticated users to read and write to users collection (for user preferences)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow authenticated users or backend services to read and write to settings collections
+    match /pitchStages/{stageId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    match /slideStructures/{structureId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+    
+    match /keyPrinciples/{principleId} {
+      allow read, write: if request.auth == null || request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // Base options for all packages/apps
+    "target": "ES2021",
+    "module": "NodeNext", // Or "ESNext" if preferred for frontend too
+    "moduleResolution": "NodeNext", // Or "Bundler" for frontend compatibility
+    "lib": ["ES2021", "DOM"], // Include DOM for frontend compatibility
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+
+    // Settings often needed for monorepo builds
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+
+    // Path alias configuration could go here if needed globally,
+    // but often defined per-app/package as you have in web/tsconfig.json
+    // "baseUrl": ".",
+    // "paths": { ... } 
+  },
+  "exclude": ["node_modules", "**/dist", "**/*.js"] // Exclude common folders
+}

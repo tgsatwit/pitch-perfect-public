@@ -1,0 +1,246 @@
+/* Slide Editor Styles */
+
+.slide-editor-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.slide-editor-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 1.5rem;
+  background-color: rgb(241 245 249);
+}
+
+.slide-template {
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 8rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-body {
+  flex: 1;
+  overflow-y: auto;
+  background-color: white;
+  padding: 2rem;
+}
+
+.slide-sections {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* Slide types styling */
+
+.title-slide {
+  padding: 60px 40px;
+}
+
+.content-slide {
+  padding: 20px 40px;
+}
+
+.chart-slide {
+  padding: 20px 40px;
+}
+
+.table-slide {
+  padding: 20px 40px;
+}
+
+.closing-slide {
+  padding: 60px 40px;
+}
+
+/* Slide content elements */
+
+.slide-title {
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+.slide-subtitle {
+  color: #64748b;
+}
+
+.slide-section-title {
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.slide-bullets {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #334155;
+}
+
+.slide-bullet {
+  display: flex;
+  align-items: flex-start;
+}
+
+.slide-bullet:before {
+  content: "•";
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.slide-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.slide-table th {
+  background-color: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  text-align: left;
+  border: 1px solid #cbd5e1;
+}
+
+.slide-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+}
+
+/* Chart visualizations */
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.pie-chart {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pie-segment {
+  height: 100%;
+}
+
+.bar-chart {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  padding: 20px;
+}
+
+.bar-item {
+  min-width: 30px;
+  margin: 0 5px;
+}
+
+.line-chart {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  padding: 20px;
+}
+
+/* Editing state */
+
+.slide-editor-container textarea,
+.slide-editor-container input {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  min-height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+}
+
+/* Content Sections */
+.content-section {
+  position: relative;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.content-section:hover {
+  background-color: rgba(243, 244, 246, 0.5);
+}
+
+.section-controls {
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.heading-section-edit,
+.bullet-list-edit,
+.image-section,
+.chart-section,
+.table-section {
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+/* Highlight active section when editing */
+.content-section.active {
+  background-color: rgba(243, 244, 246, 0.8);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Add section button styling */
+.add-section-button {
+  width: 100%;
+  padding: 8px;
+  border: 2px dashed #e2e8f0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #64748b;
+  transition: all 0.2s;
+  margin: 16px 0;
+}
+
+.add-section-button:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  color: #4f46e5;
+}
+
+/* Placeholder content */
+.placeholder-content {
+  padding: 16px;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+  .slide-template {
+    aspect-ratio: auto;
+  }
+  
+  .chart-container {
+    min-height: 180px;
+  }
+  
+  .pie-chart {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .bar-chart, .line-chart {
+    max-width: 100%;
+  }
+} 

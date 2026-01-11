@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: pitch-perfect-web
+    runtime: node
+    plan: free
+    buildCommand: ./deploy.sh
+    startCommand: cd apps/web && yarn start
+    env: node
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=4096"
+      - key: SKIP_ENV_VALIDATION
+        value: "true"

@@ -1,0 +1,105 @@
+/* Theme variables with defaults */
+:root {
+  --theme-primary: #1a365d;
+  --theme-secondary: #2c5282;
+  --theme-accent: #3182ce;
+  --theme-background: #ffffff;
+  --theme-text: #2d3748;
+  --theme-heading-font: 'Montserrat', sans-serif;
+  --theme-body-font: 'Inter', sans-serif;
+}
+
+/* Theme container applying styles to children */
+.theme-container {
+  color: var(--theme-text);
+  background-color: var(--theme-background);
+}
+
+/* Theme-aware components */
+.theme-container h1,
+.theme-container h2,
+.theme-container h3 {
+  font-family: var(--theme-heading-font);
+  color: var(--theme-primary);
+}
+
+.theme-container p,
+.theme-container li,
+.theme-container span,
+.theme-container div {
+  font-family: var(--theme-body-font);
+}
+
+/* Styled buttons */
+.theme-container .btn-primary {
+  background-color: var(--theme-primary);
+  color: white;
+}
+
+.theme-container .btn-secondary {
+  background-color: var(--theme-secondary);
+  color: white;
+}
+
+.theme-container .btn-accent {
+  background-color: var(--theme-accent);
+  color: white;
+}
+
+/* Chart styles */
+.theme-container .chart-container .bar {
+  background-color: var(--theme-accent);
+}
+
+.theme-container .chart-title {
+  font-family: var(--theme-heading-font);
+  color: var(--theme-primary);
+}
+
+/* Table styles */
+.theme-container table th {
+  background-color: var(--theme-primary);
+  color: white;
+  font-family: var(--theme-heading-font);
+}
+
+.theme-container table td {
+  font-family: var(--theme-body-font);
+  border-color: var(--theme-secondary);
+}
+
+/* Heading styles by level */
+.theme-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.theme-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.theme-container h3 {
+  font-size: 1.5rem;
+  font-weight: semibold;
+}
+
+/* Bullet list styling */
+.theme-container ul li::before {
+  color: var(--theme-accent);
+}
+
+/* Slide background */
+.slide-canvas {
+  background-color: var(--theme-background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Theme specific element styling */
+.theme-container[data-theme="wealth"] .chart-container .bar {
+  background-color: #b8860b; /* Gold for wealth management theme */
+}
+
+.theme-container[data-theme="tech-finance"] {
+  --theme-accent: #5352ed;
+} 

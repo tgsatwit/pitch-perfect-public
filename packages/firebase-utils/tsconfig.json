@@ -1,0 +1,19 @@
+{
+"extends": "../../tsconfig.base.json", // Extend from a base config
+"compilerOptions": {
+    "outDir": "./dist", 
+    "rootDir": "./src", 
+    "declaration": true, 
+    "declarationMap": true,
+    "sourceMap": true, 
+    "composite": true, 
+    "module": "NodeNext", 
+    "target": "ES2021",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "noEmit": false // Explicitly override noEmit from base config
+},
+"include": ["src/**/*"], 
+"exclude": ["node_modules", "dist"]
+}

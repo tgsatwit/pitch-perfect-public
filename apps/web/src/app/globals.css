@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: rgb(99, 102, 241);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 30%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 237 75% 65%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 30%;
+    --chart-1: 222 47% 45%;
+    --chart-2: 237 75% 65%;
+    --chart-3: 262 83% 58%;
+    --chart-4: 199 89% 48%;
+    --chart-5: 168 83% 41%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 237 75% 65%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 237 75% 65%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 237 75% 65%;
+    --chart-1: 237 75% 65%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 168 83% 41%;
+    --chart-5: 130 43% 46%;
+  }
+  html {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Change highlight color */
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+}
+
+::-moz-selection {
+  background-color: rgba(99, 102, 241, 0.3);
+}
+
+@layer utilities {
+  .shadow-inner-right {
+    box-shadow: inset -9px 0 6px -1px rgb(0 0 0 / 0.02);
+  }
+
+  .shadow-inner-left {
+    box-shadow: inset 9px 0 6px -1px rgb(0 0 0 / 0.02);
+  }
+}
+
+.artifact-content {
+  line-height: calc(
+    1.625em + 2px
+  ); /* Adjust the base value (1.625em) if needed */
+}
+
+.inline-code {
+  font-family: monospace;
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.custom-blocknote-theme {
+  --bn-colors-editor-text: #3f3f3f;
+}
+
+.custom-blocknote-theme a {
+  color: #6366f1 !important; /* Tailwind indigo-500 */
+  text-decoration: none;
+}
+
+.custom-blocknote-theme a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Flowline-inspired styles with dark navy theme */
+.gradient-heading {
+  @apply font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg transition-all shadow-md hover:shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-slate-800/10 dark:border-slate-700/50;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Edgy gradients */
+.gradient-border {
+  @apply relative rounded-lg p-[1px] overflow-hidden;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #3b82f6 100%);
+  background-size: 200% 100%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navy-card {
+  @apply bg-slate-800 text-white rounded-lg p-6 relative overflow-hidden;
+}
+
+.navy-card::before {
+  content: "";
+  @apply absolute top-0 right-0 w-40 h-40 -mt-20 -mr-20 bg-indigo-600 rounded-full opacity-10;
+}
+
+.navy-card::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-40 h-40 -mb-20 -ml-20 bg-purple-600 rounded-full opacity-10;
+}
+
+/* Puck editor styling */
+.puck-root :where([data-puck-drop-zone]) {
+  width: 100%;
+}
+
+.puck-root :where([data-puck-drop-zone][data-is-empty=false]) {
+  display: block;
+}
+
+/* Set the root container to use full width and height */
+.puck-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main content area take available height */
+.puck-root > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the drop zone container takes full height */
+.puck-root .puck-drop-zone-container {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.puck-drop-zone-empty {
+  min-height: 200px;
+  padding: 20px;
+  height: 200px;
+  width: 100%;
+}
+
+.puck-root .puck-drop-zone-container [data-rfd-droppable-id] {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.puck-root .puck-drop-zone-container [data-rfd-draggable-id] {
+  width: 100%;
+}
+
+/* Hide unnecessary UI elements */
+.puck-root [data-puck-editor-topbar] {
+  display: none;
+}
+
+/* Add some spacing between editor elements */
+.puck-root [data-puck-component-item] {
+  margin-bottom: 16px;
+}
+
+/* Presentation component styling */
+.chart-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.chart-block > div {
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+.table-block {
+  width: 100%;
+  padding: 20px;
+}
+
+.table-block table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table-block th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+}
+
+.table-block td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
